@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de CV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Générateur de CV</h1>
+
+       
+        <div class="form-container">
+            
+            <div class="form-left">
+                <h2>Informations Personnelles</h2>
+                <label for="name">Votre Nom :</label>
+                <input type="text" id="name" placeholder="John Smith" required>
+
+                <label for="job-title">Votre Poste :</label>
+                <input type="text" id="job-title" placeholder="Développeur Web" required>
+
+                <label for="contact">Téléphone :</label>
+                <input type="text" id="contact" placeholder="09 123456789">
+
+                <label for="email">Email :</label>
+                <input type="email" id="email" placeholder="jsmith123@example.com">
+
+                <label for="photo">Photo de profil :</label>
+                <input type="file" id="photo" accept="image/*"><br>
+
+                <label for="address">Adresse :</label>
+                <input type="text" id="address" placeholder="Votre adresse">
+
+                <label for="birthday">Date de Naissance :</label>
+                <input type="date" id="birthday">
+
+                <label for="links">Liens Importants :</label>
+                <div id="links"></div>
+                <button type="button" onclick="addField('links')">Ajouter</button>
+            </div>
+
+            <div class="form-right">
+                <h2>Informations Professionnelles</h2>
+
+                <label for="objective">Objectif :</label>
+                <div id="objective"></div>
+                <button type="button" onclick="addField('objective')">Ajouter</button>
+
+                <label for="experience">Expérience Professionnelle :</label>
+                <div id="experience"></div>
+                <button type="button" onclick="addField('experience')">Ajouter</button>
+
+                <h3>Éducation</h3>
+                <div id="education-fields">
+                    <div class="education-entry">
+                        <label>Nom de l'Établissement :</label>
+                        <input type="text" placeholder="Entrez le nom de l'école">
+                        <label>Début :</label>
+                        <input type="date">
+                        <label>Fin :</label>
+                        <input type="date">
+                    </div>
+                </div>
+                <button type="button" onclick="addEducation()">Ajouter</button>
+
+                <label for="skills">Compétences Professionnelles :</label>
+                <div id="skills"></div>
+                <button type="button" onclick="addField('skills')">Ajouter</button>
+
+                <label for="languages">Langues :</label>
+                <div id="languages"></div>
+                <button type="button" onclick="addField('languages')">Ajouter</button>
+            </div>
+        </div>
+
+        
+        <button type="button" id="generate-btn">Générer le CV</button>
+
+        <!--chkel dyal cv men moura genaration -->
+        <div id="cv-template" class="cv" style="display: none;">
+            <div id="profile-section"></div>
+            <h2 id="cv-name"></h2>
+            <h3 id="cv-job-title"></h3>
+            <p id="cv-contact"></p>
+            <p id="cv-email"></p>
+            <p id="cv-address"></p>
+            <p id="cv-birthday"></p>
+            <ul id="cv-links"></ul>
+            <ul id="cv-objective"></ul>
+            <ul id="cv-experience"></ul>
+            <ul id="cv-education"></ul>
+            <ul id="cv-skills"></ul>
+            <ul id="cv-languages"></ul>
+        </div>
+
+        
+        <button id="download-btn" style="display: none;">Télécharger le CV</button>
+    </div>
+
+    <script src="js.js"></script>
+</body>
+</html>
